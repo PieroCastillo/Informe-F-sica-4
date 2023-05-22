@@ -1,10 +1,14 @@
 \documentclass[../main.tex]{subfiles}
 
+\usepackage{amsmath}
+
 \begin{document}
 
 \subsection{Trabajo (W)}
 Se define como la integral de la fuerza con respecto a la posición:
-\[ W = \int_{r_0}^{r_1} \vec{F} \cdot d \vec{r} \]
+\begin{equation} \label{work}
+    W = \int_{r_0}^{r_1} \vec{F} \cdot d \vec{r} 
+\end{equation}
 Si la fuerza es constante, entonces:
 \[ W = \vec{F} \cdot \Delta \vec{r} \]
 Usando la definición del producto escalar queda:
@@ -12,15 +16,22 @@ Usando la definición del producto escalar queda:
 Donde $\theta$ es el ángulo entre el vector fuerza y el vector posición.\\
 Y si tomamos en cuenta que la fuerza es tangente a la trayectoria,
 nos da la siguiente ecuación:
-\[ W = F \cdot \Delta r \]
+\begin{equation} \label{work1}
+    W = F \cdot \Delta r 
+\end{equation}
 
 \subsection{Energía Cinética ($E_c$)}
 Si tenemos en cuenta que:
-\[ \vec{F} = m \cdot \frac{d \vec{v}}{dt} \]
-YT la reemplazamos en la definición de trabajo:
+\begin{equation} \label{fuerza}
+    \vec{F} = m \cdot \frac{d \vec{v}}{dt}
+\end{equation}
+Y la reemplazando \ref{fuerza} en \ref{work}:
 \[ W = \int_{r_0}^{r_1} m \cdot \frac{d \vec{v}}{dt} \cdot d \vec{r} \]
+\[ W = \int_{r_0}^{r_1} m \cdot \frac{d \vec{r}}{dt} \cdot d \vec{v} \]
 \[ W = \int_{v_i}^{v_f} m \cdot \vec{v} \cdot d \vec{v} \]
-\[ W = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2 \]
+\begin{equation} \label{work2}
+    W = \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2 
+\end{equation}
 
 La expresión anterior nos indica que sin importar el valor de \(\vec{F}\) y la 
 trayectoria seguida por la partícula, el valor del trabajo \textit{W}
@@ -29,12 +40,20 @@ siempre es igual a la diferencia de las magnitudes de
  trayectoria. A esta magnitud \(\frac{1}{2}mv^2 \) se la denomina
 \textit{energía cinética}.
 
-\[E_c = \frac{1}{2}mv^2 \]
+\begin{equation} \label{kineticenergy}
+    E_c = \frac{1}{2}mv^2 
+\end{equation}
 Donde:
 \begin{itemize}
     \item $E_c$ : energía cinética
     \item $m$ : masa
     \item $v$ : rapidez
 \end{itemize}
+
+Reemplazando \ref{kineticenergy} en \ref{work2}:
+\[W = E_c_1 - E_c_2 \]
+\begin{equation} \label{work3}
+    W = \Delta E_c
+\end{equation}
 
 \end{document}
