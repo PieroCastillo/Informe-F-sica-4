@@ -1,7 +1,55 @@
 \documentclass[../main.tex]{subfiles}
 
-\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{siunitx}
 
 \begin{document}
+\begin{table}
+  \caption{Fuerzas sobre el móvil en múltiples puntos de su trayectoria}
+  \label{tab:forces}
+  \begin{center}
+    \begin{tabular}[c]{lrrrrrrrr}
+      \toprule
+      \multicolumn{1}{c}{\textbf{Punto medio}} &
+      \multicolumn{1}{c}{\textbf{Tiempo} (tick)} &
+      \multicolumn{1}{c}{\textbf{x_{A}} (\unit{\centi\metre})} &
+      \multicolumn{1}{c}{\textbf{x_{B}} (\unit{\centi\metre})} &
+      \multicolumn{1}{c}{\textbf{F_{A}} (\unit{\newton})} &
+      \multicolumn{1}{c}{\textbf{F_{B}} (\unit{\newton})} &
+      \multicolumn{1}{c}{\textbf{F_{A_{t}}} (\unit{\newton})} &
+      \multicolumn{1}{c}{\textbf{F_{B_{t}}} (\unit{\newton})} &
+      \multicolumn{1}{c}{\textbf{F_{neta_{t}}} (\unit{\newton})} \\
+      \midrule
+      G & \num{7,5} & \num{15,7} & \num{6,6} & \num{565,2} & \num{217,8} & \num{} & \num{} & \num{} \\
+      H & \num{8,5} & \num{17,7} & \num{5,2} & \num{637,2} & \num{171,6} & \num{} & \num{} & \num{} \\
+      I & \num{9,5} & \num{19,5} & \num{5,4} & \num{702,0} & \num{178,2} & \num{} & \num{} & \num{} \\
+      J & \num{10,5} & \num{20,7} & \num{6,9} & \num{745,2} & \num{227,7} & \num{} & \num{} & \num{} \\
+      K & \num{11,5} & \num{21,0} & \num{8,8} & \num{756,0} & \num{290,4} & \num{} & \num{} & \num{} \\
+      L & \num{12,5} & \num{20,4} & \num{10,7} & \num{734,4} & \num{353,1} & \num{} & \num{} & \num{} \\
+      M & \num{13,5} & \num{18,8} & \num{12,3} & \num{676,8} & \num{405,9} & \num{} & \num{} & \num{} \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+\begin{table}
+  \caption{}
+  \label{tab:}
+  \begin{center}
+    \begin{tabular}[c]{l|l}
+      \toprule
+      \multicolumn{1}{c}{\textbf{Punto medio}} &
+      \multicolumn{1}{c}{\textbf{Tiempo (tick)}} &
+      \multicolumn{1}{c}{\textbf{Desplazamiento (\unit{\centi\metre})}} \\
+      \midrule
+      G & \num{7,5} & \num{4,50} \\
+      H & \num{8,5} & \num{4,20} \\
+      I & \num{9,5} & \num{3,40} \\
+      J & \num{10,5}& \num{2,90} \\
+      K & \num{11,5}& \num{2,20} \\
+      L & \num{12,5}& \num{1,90} \\
+      M & \num{13,5}& \num{2,40} \\
+    \end{tabular}
+  \end{center}
+\end{table}
 
 \end{document}
