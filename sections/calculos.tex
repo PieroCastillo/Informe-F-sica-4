@@ -2,7 +2,7 @@
 \usepackage{float}
 
 \begin{document}
-
+\subsection{Cálculo de la fuerza}
 Para determinar el trabajo realizado a lo largo de la 
 trayectoria seleccionada, se aplicó la ecuación \ref{work_force}, 
 que indica que el producto de la sumatoria de los módulos de las
@@ -13,39 +13,168 @@ que indica que el producto de la sumatoria de los módulos de las
 \[F_{Tangencial}=(F_{Resorte A o B} )\cdot(cos(\theta ))\]
 Donde $\theta$ es el ángulo entre la fuerza que ejerce el resorte y la fuerza tangencial. Estos ángulos fueron medidos cuidadosamente para hallar el módulo de la fuerza tangencial, y completar la tabla 1.
 Cabe resaltar que, la fuerza que ejerce cada resorte en los puntos medios designados por letras, es producto de su respectiva constante del resorte por la deformación del mismo, que no es más que la resta entre la magnitud del vector posición en ese punto, y la longitud natural del resorte. Finalmente, la tabla 2, describe el desplazamiento entre los puntos más próximos a los puntos medios, por ejemplo, para el punto medio G (7,5 ticks), los puntos más próximos son 7 y 8 ticks.
-TABLA 1: Módulo de las fuerzas tangenciales paralelas al desplazamiento que pasan por los puntos medios
-	TIEMPO	XA	XB	FA	FB	FA,t	FB,t	Fneta,t
-Puntos medios	(ticks)	Deformación del resorte A (±0,1 cm)	Deformación del resorte B (±0,1 cm)	Fuerza del resorte A (N)	Fuerza del resorte B (N)	Componente tangencial resorte A (N)	Componente tangencial resorte B (N)	Fuerza tangencial neta (N) 
-G	7,5	15,7	6,6	565,2	217,8	274,0	108,9	382,9
-H	8,5	17,7	5,2	637,2	171,6	308,9	23,88	332,8
-I	9,5	19,5	5,4	702,0	178,2	307,7	52,10	359,8
-J	10,5	20,7	6,9	745,2	227,7	242,6	140,2	382,8
-K	11,5	21,0	8,8	756,0	290,4	39,57	274,6	314,2
-L	12,5	20,4	10,7	734,4	353,1	431,7	333,9	765,6
-M	13,5	18,8	12,3	676,8	405,9	631,8	260,9	892,7
-
-Una pequeña cuestión a considerar en la tabla 1, es que se tomaron en cuenta 4 cifras significativas para el cálculo de las fuerzas, puesto que, si se consideraban 2, como en el caso de la constante del resorte, la propagación del error sería mucho mayor al momento de hacer los cálculos.
-TABLA 2: Módulo del desplazamiento entre los puntos más cercanos a cada punto medio
-	TIEMPO	∆s	∆s
-Puntos medios	(ticks)	Desplazamiento (±0,05 cm)	Desplazamiento (±0,0005 m)
-G	7,5	4,50	0,0450
-H	8,5	4,20	0,0420
-I	9,5	3,40	0,0340
-J	10,5	2,90	0,0290
-K	11,5	2,20	0,0220
-L	12,5	1,90	0,0190
-M	13,5	2,40	0,0240
-
-Por lo tanto, por la ecuación (ref{work_force}), el trabajo es:
-W=∑_(k=1)^(n=7)▒W_k =W_G+W_H+W_I+W_J+W_K+W_L+W_M=∑_(k=1)^(n=7)▒(F_k  .  ∆s_k ) 
-W_G=(382,9)(0,0450)
-W_H=(332,8)(0,0420)
-W_I=(359,8)(0,0340)
-W_J=(382,8)(0,0290)
-W_K=(314,2)(0,0220)
-W_L=(765,6)(0,0190)
-W_M=(892,7)(0,0240)
-W_G+W_H+W_I+W_J+W_K+W_L+W_M=97,4261 J≈97,4 J
-
-
+\begin{table}[H]
+  \caption{Fuerzas sobre el móvil en múltiples puntos de su trayectoria}
+  \label{tab:forces}
+  \begin{center}
+    \begin{tabular}[c]{lrrrrrrrr}
+      \toprule
+      \multicolumn{1}{c}{\textbf{Punto medio}} &
+      \multicolumn{1}{c}{\textbf{Tiempo} (tick)} &
+      \multicolumn{1}{c}{\textbf{x_{A}} (\unit{\centi\metre})} &
+      \multicolumn{1}{c}{\textbf{x_{B}} (\unit{\centi\metre})} &
+      \multicolumn{1}{c}{\textbf{F_{A}} (\unit{\newton})} &
+      \multicolumn{1}{c}{\textbf{F_{B}} (\unit{\newton})} &
+      \multicolumn{1}{c}{\textbf{F_{A_{t}}} (\unit{\newton})} &
+      \multicolumn{1}{c}{\textbf{F_{B_{t}}} (\unit{\newton})} &
+      \multicolumn{1}{c}{\textbf{F_{neta_{t}}} (\unit{\newton})} \\
+      \midrule
+      G & \num{7,5} & \num{15,7} & \num{6,6} & \num{565,2} & \num{217,8} & \num{} & \num{108,9} & \num{} \\
+      H & \num{8,5} & \num{17,7} & \num{5,2} & \num{637,2} & \num{171,6} & \num{} & \num{23,88} & \num{} \\
+      I & \num{9,5} & \num{19,5} & \num{5,4} & \num{702,0} & \num{178,2} & \num{} & \num{52,10} & \num{} \\
+      J & \num{10,5} & \num{20,7} & \num{6,9} & \num{745,2} & \num{227,7} & \num{} & \num{140,2} & \num{} \\
+      K & \num{11,5} & \num{21,0} & \num{8,8} & \num{756,0} & \num{290,4} & \num{} & \num{274,6} & \num{} \\
+      L & \num{12,5} & \num{20,4} & \num{10,7} & \num{734,4} & \num{353,1} & \num{} & \num{333,9} & \num{} \\
+      M & \num{13,5} & \num{18,8} & \num{12,3} & \num{676,8} & \num{405,9} & \num{} & \num{260,9} & \num{} \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+\begin{table}[H]
+  \caption{Datos del movimiento del móvil}
+  \label{tab:intervals}
+  \begin{center}
+    \begin{tabular}[c]{lrr}
+      \toprule
+      \multicolumn{1}{c}{\textbf{Punto medio}} &
+      \multicolumn{1}{c}{\textbf{Tiempo (tick)}} &
+      \multicolumn{1}{c}{\textbf{Desplazamiento (\unit{\centi\metre})}} \\
+      \midrule
+      G & \num{7,5} & \num{4,50} \\
+      H & \num{8,5} & \num{4,20} \\
+      I & \num{9,5} & \num{3,40} \\
+      J & \num{10,5} & \num{2,90} \\
+      K & \num{11,5} & \num{2,20} \\
+      L & \num{12,5} & \num{1,90} \\
+      M & \num{13,5} & \num{2,40} \\
+    \end{tabular}
+  \end{center}
+\end{table}
+\begin{align*}
+  W &= \sum_{k = 1}^{7} W_k = W_G + W_H + W_I + W_J + W_K + W_L W_M = \sum_{k = 1}^{n = 7} (F_k \times \Delta s)\\
+  W_G &= 382,9 \times 0,0450 \\
+  W_H &= 332,8 \times 0,0420 \\
+  W_I &= 359,8 \times 0,0340 \\
+  W_J &= 382,8 \times 0,0290 \\
+  W_K &= 314,2 \times 0,0220 \\
+  W_L &= 765,6 \times 0,0190 \\
+  W_M &= 892,7 \times 0,0240 \\
+  W &= \qty{97,4261}{\joule} \approx \qty{97,4}{\joule}\\
+\end{align*}
+Utilizando análisis de errores, fueron halladas las incertidumbres de cada fuerza:
+\begin{table}[H]
+  \caption{Incertidumbre del trabjo en cada punto medio}
+  \label{tab:uncer_work}
+  \begin{center}
+    \begin{tabular}[c]{rll}
+      \toprule
+      \multicolumn{1}{c}{\textbf{Punto medio}} & 
+      \multicolumn{1}{c}{\textbf{Tiempo} (tick)} & 
+      \multicolumn{1}{c}{\textbf{Incertidumbre} $\delta W$} \\
+      \midrule
+      G & \num{7,5} & 5,9 \\
+      H & \num{8,5} & 4,9 \\
+      I & \num{9,5} & 4,5 \\
+      J & \num{10,5} & 4,6 \\
+      K & \num{11,5} & 3,9 \\
+      L & \num{12,5} & 4,6 \\
+      M & \num{13,5} & 5,8 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+La incertidumbre del trabajo total es:
+\begin{equation}
+  \delta W = \sum_{k = G}^{k = M} \delta W_k = \qty{34,2}{\joule}
+  \label{eq:total_work_error}
+\end{equation}
+Entonces, la medida del trabajo con su incetidumbre es:
+\begin{equation}
+  W \pm \delta W = 97,4 \pm \qty{34,2}{\joule}
+  \label{eq:work_final}
+\end{equation}
+Determinando el error relativo:
+\begin{equation}
+  \epsilon_R_W = \frac{34,2}{97,4} \approx 0,35 = \qty{35}{\percent}
+  \label{eq:work_error_rel}
+\end{equation}
+Como se puede apreciar, el error es 3 veces mayor a lo aceptable, esta poca precisión en el resultado se debe a la gran incertidumbre del resorte B, el cual posee una baja precisión, y, además, a la propagación de errores por los extensos cálculos realizados.
+\subsection{Cálculo de la energía}
+Para calcular la energía, se debe determinar el valor de la velocidad inicial y final del trayecto, en este caso, en los ticks 7 y 14, para ello, se calculará una aproximación de la velocidad instantánea en esos puntos, utilizando la ecuación de la velocidad media.
+Por lo cual, son necesarios los módulos de las posiciones, y los ángulos en posición normal de los ticks más próximos a los puntos inicial y final. 
+\begin{table}[H]
+  \caption{Módulo de los vectores posición de los puntos más cercanos a los ticks seleccionados}
+  \label{tab:04}
+  \begin{center}
+    \begin{tabular}[c]{lr}
+      \toprule
+      \multicolumn{1}{c}{\textbf{Tick}} & 
+      \multicolumn{1}{c}{$r_B (\pm \qty{0,0005}{\metre})$} \\
+      \midrule
+      6 & 0,2060 \\
+      8 & 0,1530 \\
+      13 & 0,2130 \\
+      15 & 0,2400 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+\begin{table}[H]
+  \caption{Ángulos formados por los vectores de posición respecto al eje de las abscisas en los puntos más cercanos a los ticks seleccionados}
+  \label{tab:05}
+  \begin{center}
+    \begin{tabular}[c]{lr}
+      \toprule
+      \multicolumn{1}{c}{\textbf{Tick}} & 
+      \multicolumn{1}{c}{$\theta_B (\pm \qty{0,5}{\degree})$} \\
+      \midrule
+      6 & \qty{163,0}{\degree} \\
+      8 & \qty{-138,0}{\degree} \\
+      13 & \qty{-136,0}{\degree} \\
+      15 & \qty{-149,0}{\degree} \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+Hallando la velocidad en $t = \qty{7}{\second}$:
+\begin{align*}
+  \vec{v}_7 &= \frac{1}{\qty{1}{tick}}
+  (0,1530(\cos{(\qty{-138,0}{\degree})}\hat{j} + \sin{(\qty{-138,0}{\degree})}\hat{i}) -
+  (0,2060(\cos{(\qty{-163,0}{\degree})}\hat{j} + \sin{(\qty{-163,0}{\degree})}\hat{i})) \\
+  &\approx 20(0,08330 \hat{i} - 0,16260 \hat{j})\ \unit{\metre\per\second} \\
+  &\approx 1,7 \hat{i} - 3,3 \hat{j}\ \unit{\metre\per\second}
+\end{align*}
+Hallando el módulo de la velocidad en $t = \qty{7}{\second}$:
+\begin{equation*}
+  v_7 = \sqrt{(1,7)^2 + (-3,3)^2} \approx \qty{3,7}{\metre\per\second}
+\end{equation*}
+Hallando la velocidad en $t = \qty{14}{\second}$:
+\begin{align*}
+  \vec{v}_14 &= \frac{1}{\qty{1}{tick}}
+  (0,2400(\cos{(\qty{-149,0}{\degree})}\hat{j} + \sin{(\qty{-149,0}{\degree})}\hat{i}) -
+  (0,2130(\cos{(\qty{-136,0}{\degree})}\hat{j} + \sin{(\qty{-136,0}{\degree})}\hat{i})) \\
+  &\approx 20(-0,05250 \hat{i} - 0,02435 \hat{j})\ \unit{\metre\per\second} \\
+  &\approx -1,1 \hat{i} - 0,49 \hat{j}\ \unit{\metre\per\second}
+\end{align*}
+Hallando el módulo de la velocidad en $t = \qty{14}{\second}$:
+\begin{equation*}
+  v_14 = \sqrt{(-1,1)^2 + (-0,49)^2} \approx \qty{1,2}{\metre\per\second}
+\end{equation*}
+Determinados los módulos de las velocidades final e inicial, sabiendo que la masa del disco es $m = \qty{0,19}{\kilo\gram}$, es posible hallar el cambio en la energía cinética del sistema:
+\begin{align*}
+  \Delta E &= E_f - E_i \\
+  &= \frac{1}{2}m(v_f^2 - v_i^2) \\
+  &= \frac{1}{2}(0,19)((1,2)^2 - (1,7)^2) \\
+  &\approx \qty{-1,16}{\joule}
+\end{align*}
 \end{document}
