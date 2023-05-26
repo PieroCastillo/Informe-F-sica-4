@@ -3,5 +3,49 @@
 
 \begin{document}
 
+Para determinar el trabajo realizado a lo largo de la 
+trayectoria seleccionada, se aplicó la ecuación \ref{work_force}, 
+que indica que el producto de la sumatoria de los módulos de las
+ fuerzas para cada desplazamiento por este último, es igual 
+ al trabajo. En este caso se asume que la fuerza tangencial 
+ paralela a cada desplazamiento es constante, y se puede 
+ calcular de la siguiente manera para cada punto medio:
+\[F_{Tangencial}=(F_{Resorte A o B} )\cdot(cos(\theta ))\]
+Donde $\theta$ es el ángulo entre la fuerza que ejerce el resorte y la fuerza tangencial. Estos ángulos fueron medidos cuidadosamente para hallar el módulo de la fuerza tangencial, y completar la tabla 1.
+Cabe resaltar que, la fuerza que ejerce cada resorte en los puntos medios designados por letras, es producto de su respectiva constante del resorte por la deformación del mismo, que no es más que la resta entre la magnitud del vector posición en ese punto, y la longitud natural del resorte. Finalmente, la tabla 2, describe el desplazamiento entre los puntos más próximos a los puntos medios, por ejemplo, para el punto medio G (7,5 ticks), los puntos más próximos son 7 y 8 ticks.
+TABLA 1: Módulo de las fuerzas tangenciales paralelas al desplazamiento que pasan por los puntos medios
+	TIEMPO	XA	XB	FA	FB	FA,t	FB,t	Fneta,t
+Puntos medios	(ticks)	Deformación del resorte A (±0,1 cm)	Deformación del resorte B (±0,1 cm)	Fuerza del resorte A (N)	Fuerza del resorte B (N)	Componente tangencial resorte A (N)	Componente tangencial resorte B (N)	Fuerza tangencial neta (N) 
+G	7,5	15,7	6,6	565,2	217,8	274,0	108,9	382,9
+H	8,5	17,7	5,2	637,2	171,6	308,9	23,88	332,8
+I	9,5	19,5	5,4	702,0	178,2	307,7	52,10	359,8
+J	10,5	20,7	6,9	745,2	227,7	242,6	140,2	382,8
+K	11,5	21,0	8,8	756,0	290,4	39,57	274,6	314,2
+L	12,5	20,4	10,7	734,4	353,1	431,7	333,9	765,6
+M	13,5	18,8	12,3	676,8	405,9	631,8	260,9	892,7
+
+Una pequeña cuestión a considerar en la tabla 1, es que se tomaron en cuenta 4 cifras significativas para el cálculo de las fuerzas, puesto que, si se consideraban 2, como en el caso de la constante del resorte, la propagación del error sería mucho mayor al momento de hacer los cálculos.
+TABLA 2: Módulo del desplazamiento entre los puntos más cercanos a cada punto medio
+	TIEMPO	∆s	∆s
+Puntos medios	(ticks)	Desplazamiento (±0,05 cm)	Desplazamiento (±0,0005 m)
+G	7,5	4,50	0,0450
+H	8,5	4,20	0,0420
+I	9,5	3,40	0,0340
+J	10,5	2,90	0,0290
+K	11,5	2,20	0,0220
+L	12,5	1,90	0,0190
+M	13,5	2,40	0,0240
+
+Por lo tanto, por la ecuación (ref{work_force}), el trabajo es:
+W=∑_(k=1)^(n=7)▒W_k =W_G+W_H+W_I+W_J+W_K+W_L+W_M=∑_(k=1)^(n=7)▒(F_k  .  ∆s_k ) 
+W_G=(382,9)(0,0450)
+W_H=(332,8)(0,0420)
+W_I=(359,8)(0,0340)
+W_J=(382,8)(0,0290)
+W_K=(314,2)(0,0220)
+W_L=(765,6)(0,0190)
+W_M=(892,7)(0,0240)
+W_G+W_H+W_I+W_J+W_K+W_L+W_M=97,4261 J≈97,4 J
+
 
 \end{document}
